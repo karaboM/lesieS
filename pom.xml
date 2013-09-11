@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.lesie</groupId>
+    <artifactId>lesie</artifactId>
+    <packaging>pom</packaging>
+    <version>0.1-SNAPSHOT</version>
+
+
+    <properties>
+        <karaf.version>2.3.1</karaf.version>
+        <lesie.version>0.1-SNAPSHOT</lesie.version>
+    </properties>
+
+    <modules>
+        <module>lesie-parent</module>
+        <module>lesie-assembly-feature</module>
+        <module>lesie-distribution</module>
+    </modules>
+
+    <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+                <execution>
+                    <!-- Uncompress the standard Karaf distribution -->
+                    <id>unpack-dist</id>
+                    <phase>post-clean</phase>
+                    <goals>
+                        <goal>unpack</goal>
+                    </goals>
+                    <configuration>
+                        <artifactItems>
+                            <artifactItem>
+                                <groupId>org.apache.karaf</groupId>
+                                <artifactId>apache-karaf</artifactId>
+                                <type>tar.gz</type>
+                                <outputDirectory>target/dependencies</outputDirectory>
+                            </artifactItem>
+                        </artifactItems>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+       <!-- <plugin>
+            <artifactId>exec-maven-plugin</artifactId>
+            <groupId>org.codehaus.mojo</groupId>
+            <executions>
+                <execution>&lt;!&ndash; Run our version calculation script &ndash;&gt;
+                    <id>Version Calculation</id>
+                    <phase>generate-sources</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>${basedir}/scripts/calculate-version.sh</executable>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>-->
+    </plugins>
+    </build>
+
+</project>

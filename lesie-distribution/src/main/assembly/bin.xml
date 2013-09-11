@@ -1,0 +1,64 @@
+<assembly>
+    <id>bin</id>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+    <fileSets>
+        <!-- Expanded Karaf Standard Distribution -->
+        <fileSet>
+            <directory>target/dependencies/apache-karaf-2.3.1
+            </directory>
+            <outputDirectory>/</outputDirectory>
+            <excludes>
+                <exclude>**/demos/**</exclude>
+                <exclude>bin/**</exclude>
+                <exclude>etc/system.properties</exclude>
+                <exclude>etc/users.properties</exclude>
+                <exclude>etc/org.apache.karaf.features.cfg
+                </exclude>
+                <exclude>etc/org.ops4j.pax.logging.cfg</exclude>
+                <exclude>LICENSE</exclude>
+                <exclude>NOTICE</exclude>
+                <exclude>README</exclude>
+                <exclude>RELEASE-NOTES</exclude>
+                <exclude>karaf-manual*.html</exclude>
+                <exclude>karaf-manual*.pdf</exclude>
+            </excludes>
+        </fileSet>
+        <!-- Copy over bin/* separately to get the correct file
+        mode -->
+        <fileSet>
+            <directory>target/dependencies/apache-karaf-2.3.1/bin
+            </directory>
+            <outputDirectory>/bin</outputDirectory>
+            <includes>
+                <include>admin</include>
+                <include>karaf</include>
+                <include>start</include>
+                <include>stop</include>
+            </includes>
+            <fileMode>0755</fileMode>
+        </fileSet>
+
+        <fileSet>
+            <directory>src/main/distribution</directory>
+            <outputDirectory>/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </fileSet>
+        <fileSet>
+            <directory>target/classes/etc</directory>
+            <outputDirectory>/etc/</outputDirectory>
+            <lineEnding>unix</lineEnding>
+            <fileMode>0644</fileMode>
+        </fileSet>
+        <fileSet>
+            <directory>target/dependencies/apache-karaf-2.3.1/lib</directory>
+            <outputDirectory>/lib/</outputDirectory>
+
+        </fileSet>
+        <fileSet>
+            <directory>target/features-repo</directory>
+            <outputDirectory>/system</outputDirectory>
+        </fileSet>
+    </fileSets>
+</assembly>

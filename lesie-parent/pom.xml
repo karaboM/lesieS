@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.lesie</groupId>
+    <artifactId>lesie-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>0.1-SNAPSHOT</version>
+
+    <modules>
+        <module>../lesie-kernel</module>
+        <module>../lesie-connector</module>
+        <module>../lesie-connector-impl</module>
+        <!--   <module>lesie-assembly</module>-->
+        <module>../lesie-queue-api</module>
+        <module>../lesie-incoming-queue</module>
+        <module>../lesie-outgoing-queue</module>
+        <module>../lesie-processor-api</module>
+        <module>../lesie-token-api</module>
+        <module>../lesie-user-loader</module>
+        <module>../lesie-user-api</module>
+        <module>../lesie-processor-pool</module>
+        <module>../lesie-processor-manager</module>
+        <module>../lesie-queue-manager</module>
+
+    </modules>
+
+    <dependencies>
+
+    </dependencies>
+
+</project>
