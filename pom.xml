@@ -30,17 +30,18 @@
                 <execution>
                     <!-- Uncompress the standard Karaf distribution -->
                     <id>unpack-dist</id>
-                    <phase>post-clean</phase>
+                    <phase>install</phase>
                     <goals>
                         <goal>unpack</goal>
                     </goals>
                     <configuration>
                         <artifactItems>
                             <artifactItem>
-                                <groupId>org.apache.karaf</groupId>
-                                <artifactId>apache-karaf</artifactId>
+                                <groupId>org.lesie</groupId>
+                                <artifactId>lesie-distribution</artifactId>
+                                <version>${lesie.version}</version>
                                 <type>tar.gz</type>
-                                <outputDirectory>target/dependencies</outputDirectory>
+                                <outputDirectory>target/</outputDirectory>
                             </artifactItem>
                         </artifactItems>
                     </configuration>
