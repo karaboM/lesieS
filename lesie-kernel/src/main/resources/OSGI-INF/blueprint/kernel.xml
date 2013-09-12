@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipojo
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://felix.apache.org/ipojo/schemas/CURRENT/core.xsd"
+        xmlns="org.apache.felix.ipojo">
+
+    <component classname="org.lesie.ConnectorServiceImpl"
+               name="connectorServiceBean">
+        <provides/>
+    </component>
+
+    <instance component="connectorServiceBean"/>
+</ipojo>
