@@ -15,28 +15,29 @@
  */
 package org.lesie.boot;
 
-import org.lesie.ConnectorService;
+import org.lesie.connection.ConnectionManager;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+
+public class Application implements BundleActivator {
+
+    ConnectionManager connectionManager;
 
 
-public class Application {
-
-
-
-    ConnectorService connectorService;
-
-    public Application(){};
-
-    public void start(){
-        connectorService.init();
-        System.out.println("KARABO");
+    @Override
+    public void start(BundleContext bundleContext) throws Exception {
+        //start the connection
+        ServiceReference reference = bundleContext
+                .getServiceReference(ConnectionManager.class.getName());
+        connectionManager = (ConnectionManager) bundleContext.getService(reference);
+        connectionManager.init();
+        System.out.println("starting ");
     }
 
-
-    public void setConnectorService(ConnectorService connectorService) {
-        this.connectorService = connectorService;
+    @Override
+    public void stop(BundleContext bundleContext) throws Exception {
+        connectionManager.stop();
+        System.out.println("stopping ");
     }
-
-
-
-
 }
