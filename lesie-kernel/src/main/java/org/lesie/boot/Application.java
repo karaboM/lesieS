@@ -37,7 +37,7 @@ public class Application implements BundleActivator {
 
     @Override
     public void stop(BundleContext bundleContext) throws Exception {
-        connectionManager.stop();
+        connectionManager .stop();
         System.out.println("stopping ");
     }
 }
