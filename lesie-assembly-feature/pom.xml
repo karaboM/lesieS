@@ -5,12 +5,12 @@
     <parent>
         <artifactId>lesie</artifactId>
         <groupId>org.lesie</groupId>
-        <version>0.1-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.lesie</groupId>
+
     <artifactId>lesie-assembly-feature</artifactId>
 
     <dependencies>
@@ -19,68 +19,76 @@
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-connector</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-connector-impl</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-connector-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-incoming-queue</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-kernel</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-outgoing-queue</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-processor-pool</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-queue-api</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-queue-manager</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-token-api</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-user-api</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-user-loader</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
+
 
     </dependencies>
 

@@ -13,26 +13,24 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
-package org.lesie.boot;
 
-import org.lesie.connection.ConnectionManager;
-import org.osgi.framework.BundleActivator;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
-
-public class Application implements BundleActivator {
-
-    ConnectionManager connectionManager;
+package org.lesie.connection.api;
 
 
-    @Override
-    public void start(BundleContext bundleContext) throws Exception {
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 
-        System.out.println("starting ");
-    }
+@Path("connector")
+@Produces({"application/json"})
+public interface ConnectionManager {
 
-    @Override
-    public void stop(BundleContext bundleContext) throws Exception {
-        System.out.println("stopping ");
-    }
+
+    @GET
+    @Path("connect/{clientName}/{indentityKey}")
+    public String connect(String clientName,String identityKey);
+
+    @GET
+    @Path("disconnect/{clientName},{sessionKey}")
+    public boolean disconnect(String clientName,String sessionKey);
 }

@@ -7,15 +7,17 @@
     <parent>
         <artifactId>lesie</artifactId>
         <groupId>org.lesie</groupId>
-        <version>0.1-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
-    <groupId>org.lesie</groupId>
+    <properties>
+        <cxf.version>2.7.5</cxf.version>
+        <activemq.version>5.5.0</activemq.version>
+    </properties>
+
     <artifactId>lesie-distribution</artifactId>
     <packaging>pom</packaging>
-    <version>0.1-SNAPSHOT</version>
-
 
     <dependencies>
         <dependency>
@@ -28,6 +30,27 @@
             <groupId>org.apache.karaf.assemblies.features</groupId>
             <artifactId>standard</artifactId>
             <version>${karaf.version}</version>
+            <type>xml</type>
+            <classifier>features</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.karaf.assemblies.features</groupId>
+            <artifactId>enterprise</artifactId>
+            <version>${karaf.version}</version>
+            <type>xml</type>
+            <classifier>features</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf.karaf</groupId>
+            <artifactId>apache-cxf</artifactId>
+            <version>${cxf.version}</version>
+            <type>xml</type>
+            <classifier>features</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-karaf</artifactId>
+            <version>${activemq.version}</version>
             <type>xml</type>
             <classifier>features</classifier>
         </dependency>
@@ -74,6 +97,16 @@
                                 <descriptor>
                                     mvn:org.apache.karaf.assemblies.features/standard/${karaf.version}/xml/features
                                 </descriptor>
+                                <descriptor>
+                                    mvn:org.apache.karaf.assemblies.features/enterprise/${karaf.version}/xml/features
+                                </descriptor>
+                                <descriptor>
+                                    mvn:org.apache.cxf.karaf/apache-cxf/${cxf.version}/xml/features
+                                </descriptor>
+                                <descriptor>
+                                    mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features
+                                </descriptor>
+
                                 <descriptor>
                                     file:${parent.relativePath}/lesie-assembly-feature/target/xml/feature/lesie-feature.xml
                                 </descriptor>

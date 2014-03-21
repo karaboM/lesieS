@@ -13,26 +13,8 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
-package org.lesie.boot;
 
-import org.lesie.connection.ConnectionManager;
-import org.osgi.framework.BundleActivator;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
+package org.lesie.connection;
 
-public class Application implements BundleActivator {
-
-    ConnectionManager connectionManager;
-
-
-    @Override
-    public void start(BundleContext bundleContext) throws Exception {
-
-        System.out.println("starting ");
-    }
-
-    @Override
-    public void stop(BundleContext bundleContext) throws Exception {
-        System.out.println("stopping ");
-    }
+public class Session {
 }

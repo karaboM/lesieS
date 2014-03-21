@@ -5,8 +5,10 @@
     <parent>
         <artifactId>lesie-parent</artifactId>
         <groupId>org.lesie</groupId>
-        <version>0.1-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../lesie-parent</relativePath>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.lesie</groupId>

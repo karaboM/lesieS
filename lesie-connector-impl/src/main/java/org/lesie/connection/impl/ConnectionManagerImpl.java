@@ -17,47 +17,29 @@ package org.lesie.connection.impl;
 
 
 import org.lesie.connection.ConnectionManager;
-import org.lesie.connection.ConnectionSettings;
+import org.lesie.connection.Session;
 
-import java.io.IOException;
+import java.util.HashMap;
 
 public class ConnectionManagerImpl implements ConnectionManager {
 
-    Reactor reactor;
-    Acceptor acceptor;
-    Handler handler;
-
+    private HashMap<String,Session> sessionMap;
     public void init(){
         System.out.println("INIT ");
+        sessionMap = new HashMap<String, Session>();
 
-        try {
-            startup(defaultConnectionSettings());
-        } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-    }
-
-    public void stop(){
 
     }
 
-    private void startup(ConnectionSettings conSet) throws IOException {
-
-
-
-        reactor  = new Reactor(conSet.getPort(), false);
-        new Thread(reactor).start();
+    @Override
+    public String connect(String clientName, String identityKey) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    private ConnectionSettings defaultConnectionSettings(){
-
-        ConnectionSettings defaultConSettings = new ConnectionSettings();
-
-        defaultConSettings.setHost("localhost");
-        defaultConSettings.setPort(9999);
-
-        return defaultConSettings;
-
+    @Override
+    public boolean disconnect(String clientName, String sessionKey) {
+        return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
+
 
 }
