@@ -21,16 +21,20 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-@Path("connector")
-@Produces({"application/json"})
-public interface ConnectionManager {
-
+@Path("/connector")
+@Produces("application/json")
+public interface ConnectionManagerAPI {
 
     @GET
-    @Path("connect/{clientName}/{indentityKey}")
+    @Path("/test")
+    public String test();
+
+    @GET
+    @Path("/connect/{clientName}/{indentityKey}")
     public String connect(String clientName,String identityKey);
 
+
     @GET
-    @Path("disconnect/{clientName},{sessionKey}")
+    @Path("/disconnect/{clientName},{sessionKey}")
     public boolean disconnect(String clientName,String sessionKey);
 }

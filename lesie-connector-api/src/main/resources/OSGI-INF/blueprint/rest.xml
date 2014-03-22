@@ -19,20 +19,24 @@
 
     <jaxrs:server address="/api" id="restConnectionManager">
         <jaxrs:serviceBeans>
-            <ref component-id="connectionManagerImpl"/>
+            <ref component-id="connectionManagerAPIImpl"/>
         </jaxrs:serviceBeans>
     </jaxrs:server>
 
+ <!--   <jaxrs:client id="connectionManagerProxy" serviceClass="org.lesie.connection.api.ConnectionManagerAPI"
+                  address="http://localhost:8080/connection" />-->
 
     <!-- Implementation of the rest service -->
-    <bean id="ConnectionManagerImpl" class="org.lesie.connection.impl.ConnectionManagerImpl">
-        <property name="connectionManager" ref="connectionManagerBean"/>  <!--Points to the reference below -->
+    <bean id="connectionManagerAPIImpl" class="org.lesie.connection.api.impl.ConnectionManagerAPIImpl">
+        <property name="connectionManager" ref="connectionManagerBean"/>
+        <!--Points to the reference below -->
     </bean>
 
     <!-- This has to point to the service registered through serviceimpl.xml in the service.impl project -->
 
-   <!-- <reference id="ConnectionManagerBean"
+    <reference id="connectionManagerBean"
                interface="org.lesie.connection.ConnectionManager">
-    </reference>-->
+    </reference>
+
 
 </blueprint>

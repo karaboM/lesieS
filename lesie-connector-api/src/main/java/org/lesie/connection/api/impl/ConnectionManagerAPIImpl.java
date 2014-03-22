@@ -16,9 +16,13 @@
 
 package org.lesie.connection.api.impl;
 
-import org.lesie.connection.api.ConnectionManager;
+import org.lesie.connection.api.ConnectionManagerAPI;
+import org.lesie.connection.ConnectionManager;
 
-public class ConnectionManagerImpl implements ConnectionManager{
+public class ConnectionManagerAPIImpl implements ConnectionManagerAPI{
+
+
+    private ConnectionManager connectionManager;
 
     public ConnectionManager getConnectionManager() {
         return connectionManager;
@@ -28,7 +32,11 @@ public class ConnectionManagerImpl implements ConnectionManager{
         this.connectionManager = connectionManager;
     }
 
-    private ConnectionManager connectionManager;
+
+    @Override
+    public String test() {
+        return "Testing";
+    }
 
     @Override
     public String connect(String clientName, String identityKey) {
