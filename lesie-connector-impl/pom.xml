@@ -26,6 +26,13 @@
             <version>0.0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-kernel</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -41,7 +48,7 @@
                         <Bundle-Version>${project.version}</Bundle-Version>
 
                         <Export-Package>
-                            org.lesie.connection.impl
+                            org.lesie.connection.impl;version=${project.version}
                         </Export-Package>
                         <Import-Package>
                             org.osgi.framework,org.lesie.connection,*

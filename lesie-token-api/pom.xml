@@ -12,6 +12,10 @@
 
     <groupId>org.lesie</groupId>
     <artifactId>lesie-token-api</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>../lesie-queue-manager-impl</module>
+    </modules>
 
 
 </project>

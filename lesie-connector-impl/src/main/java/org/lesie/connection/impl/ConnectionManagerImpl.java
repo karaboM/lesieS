@@ -18,28 +18,45 @@ package org.lesie.connection.impl;
 
 import org.lesie.connection.ConnectionManager;
 import org.lesie.connection.Session;
+import org.lesie.kernel.SwitchBoard;
+import org.lesie.kernel.api.Command;
 
 import java.util.HashMap;
 
 public class ConnectionManagerImpl implements ConnectionManager {
 
+    private SwitchBoard switchBoard;
+
     private HashMap<String,Session> sessionMap;
     public void init(){
-        System.out.println("INIT ");
-        sessionMap = new HashMap<String, Session>();
-
-
     }
 
     @Override
     public String connect(String clientName, String identityKey) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        HashMap<String,Object> parameters = new HashMap<String, Object>();
+        parameters.put("clientName",clientName);
+        parameters.put("identityKey",identityKey);
+
+        String result = (String)switchBoard.command(Command.CONNECT,parameters);
+        return result;
     }
 
     @Override
     public boolean disconnect(String clientName, String sessionKey) {
-        return false;  //To change body of implemented methods use File | Settings | File Templates.
+        HashMap<String,Object> parameters = new HashMap<String, Object>();
+        parameters.put("clientName",clientName);
+        parameters.put("sessionKey",sessionKey);
+
+        Boolean result = (Boolean)switchBoard.command(Command.DISCONNECT,parameters);
+        return result;
     }
 
 
+    public SwitchBoard getSwitchBoard() {
+        return switchBoard;
+    }
+
+    public void setSwitchBoard(SwitchBoard switchBoard) {
+        this.switchBoard = switchBoard;
+    }
 }

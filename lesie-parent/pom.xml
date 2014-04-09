@@ -21,8 +21,7 @@
         <module>../lesie-connector-api</module>
         <!--   <module>lesie-assembly</module>-->
         <module>../lesie-queue-api</module>
-        <module>../lesie-incoming-queue</module>
-        <module>../lesie-outgoing-queue</module>
+        <module>../lesie-queue</module>
         <module>../lesie-processor-api</module>
         <module>../lesie-token-api</module>
         <module>../lesie-user-loader</module>
