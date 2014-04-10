@@ -40,7 +40,7 @@
                             org.lesie.queue.*;version=${project.version}
                         </Export-Package>
                         <Import-Package>
-                            org.osgi.*
+                            org.osgi.*,org.lesie.queue;version=${project.version}
                         </Import-Package>
                     </instructions>
                 </configuration>

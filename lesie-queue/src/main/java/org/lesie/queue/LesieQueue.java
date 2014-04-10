@@ -1,5 +1,5 @@
 /**
- *      Copyright 2013 CPUT
+ *      Copyright 2014 CPUT
  *
  *      Licensed under the Apache License, Version 2.0 (the "License");
  *      you may not use this file except in compliance with the License.
@@ -16,8 +16,10 @@
 
 package org.lesie.queue;
 
-public class LesieQueue {
+public interface LesieQueue {
 
-
+    public String generateToken();
+    public Object findResponseByToken(String token);
+    public void processRequest(QueueRequestObject requestObj);
 
 }

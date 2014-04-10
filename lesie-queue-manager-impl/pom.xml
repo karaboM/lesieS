@@ -72,7 +72,7 @@
                             org.lesie.queue.impl;version=${project.version}
                         </Export-Package>
                         <Import-Package>
-                            org.osgi.*,org.lesie.queue.*
+                            org.osgi.*,org.lesie.queue.*;version=${project.version}
                         </Import-Package>
                     </instructions>
                 </configuration>
