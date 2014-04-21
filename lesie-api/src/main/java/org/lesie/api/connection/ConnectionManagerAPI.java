@@ -14,8 +14,10 @@
  *      limitations under the License.
  */
 
-package org.lesie.connection.api;
+package org.lesie.api.connection;
 
+
+import org.lesie.dto.response.LesieResponseDTO;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -26,15 +28,11 @@ import javax.ws.rs.Produces;
 public interface ConnectionManagerAPI {
 
     @GET
-    @Path("/test")
-    public String test();
-
-    @GET
     @Path("/connect/{clientName}/{indentityKey}")
-    public String connect(String clientName,String identityKey);
+    public LesieResponseDTO connect(String clientName,String identityKey);
 
 
     @GET
     @Path("/disconnect/{clientName},{sessionKey}")
-    public boolean disconnect(String clientName,String sessionKey);
+    public LesieResponseDTO disconnect(String clientName,String sessionKey);
 }

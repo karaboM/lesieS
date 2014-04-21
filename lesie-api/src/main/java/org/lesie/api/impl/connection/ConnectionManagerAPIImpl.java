@@ -14,12 +14,13 @@
  *      limitations under the License.
  */
 
-package org.lesie.connection.api.impl;
+package org.lesie.api.impl.connection;
 
-import org.lesie.connection.api.ConnectionManagerAPI;
+import org.lesie.api.connection.ConnectionManagerAPI;
 import org.lesie.connection.ConnectionManager;
+import org.lesie.dto.response.LesieResponseDTO;
 
-public class ConnectionManagerAPIImpl implements ConnectionManagerAPI{
+public class ConnectionManagerAPIImpl implements ConnectionManagerAPI {
 
 
     private ConnectionManager connectionManager;
@@ -34,17 +35,12 @@ public class ConnectionManagerAPIImpl implements ConnectionManagerAPI{
 
 
     @Override
-    public String test() {
-        return "Testing";
-    }
-
-    @Override
-    public String connect(String clientName, String identityKey) {
+    public LesieResponseDTO connect(String clientName, String identityKey) {
         return connectionManager.connect(clientName,identityKey);
     }
 
     @Override
-    public boolean disconnect(String clientName, String sessionKey) {
+    public LesieResponseDTO disconnect(String clientName, String sessionKey) {
         return connectionManager.disconnect(clientName,sessionKey);
     }
 }

@@ -18,7 +18,7 @@
         <module>../lesie-kernel</module>
         <module>../lesie-connector</module>
         <module>../lesie-connector-impl</module>
-        <module>../lesie-connector-api</module>
+        <module>../lesie-api</module>
         <!--   <module>lesie-assembly</module>-->
         <module>../lesie-queue-api</module>
         <module>../lesie-queue</module>

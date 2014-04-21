@@ -18,6 +18,7 @@ package org.lesie.connection.impl;
 
 import org.lesie.connection.ConnectionManager;
 import org.lesie.connection.Session;
+import org.lesie.dto.response.LesieResponseDTO;
 import org.lesie.kernel.SwitchBoard;
 import org.lesie.kernel.api.Command;
 
@@ -32,22 +33,22 @@ public class ConnectionManagerImpl implements ConnectionManager {
     }
 
     @Override
-    public String connect(String clientName, String identityKey) {
+    public LesieResponseDTO connect(String clientName, String identityKey) {
         HashMap<String,Object> parameters = new HashMap<String, Object>();
         parameters.put("clientName",clientName);
         parameters.put("identityKey",identityKey);
 
-        String result = (String)switchBoard.command(Command.CONNECT,parameters);
+        LesieResponseDTO result = switchBoard.command(Command.CONNECT,parameters);
         return result;
     }
 
     @Override
-    public boolean disconnect(String clientName, String sessionKey) {
+    public LesieResponseDTO disconnect(String clientName, String sessionKey) {
         HashMap<String,Object> parameters = new HashMap<String, Object>();
         parameters.put("clientName",clientName);
         parameters.put("sessionKey",sessionKey);
 
-        Boolean result = (Boolean)switchBoard.command(Command.DISCONNECT,parameters);
+        LesieResponseDTO result = switchBoard.command(Command.DISCONNECT,parameters);
         return result;
     }
 

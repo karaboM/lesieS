@@ -17,10 +17,12 @@
 package org.lesie.kernel;
 
 
+import org.lesie.dto.response.LesieResponseDTO;
+
 import java.util.Map;
 
 public interface SwitchBoard {
 
-    public Object command(String commandName,Map<String,Object> parameters);
+    public LesieResponseDTO command(String commandName,Map<String,Object> parameters);
 
 }

@@ -21,19 +21,27 @@
         <jaxrs:serviceBeans>
             <ref component-id="connectionManagerAPIImpl"/>
         </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <bean class="org.apache.cxf.jaxrs.provider.json.JSONProvider">
+                <property name="dropRootElement" value="true"/>
+                <property name="dropCollectionWrapperElement" value="true"/>
+                <property name="serializeAsArray" value="true"/>
+                <property name="supportUnwrapped" value="true"/>
+            </bean>
+        </jaxrs:providers>
     </jaxrs:server>
 
- <!--   <jaxrs:client id="connectionManagerProxy" serviceClass="org.lesie.connection.api.ConnectionManagerAPI"
-                  address="http://localhost:8080/connection" />-->
+    <!--   <jaxrs:client id="connectionManagerProxy" serviceClass="org.lesie.connection.api.ConnectionManagerAPI"
+                     address="http://localhost:8080/connection" />-->
 
     <!-- Implementation of the rest service -->
-    <bean id="connectionManagerAPIImpl" class="org.lesie.connection.api.impl.ConnectionManagerAPIImpl">
-        <property name="connectionManager" ref="connectionManagerBean"/>
+    <bean id="connectionManagerAPIImpl" class="org.lesie.api.impl.connection.ConnectionManagerAPIImpl">
+        <property name="connectionManager" ref="connectionManager"/>
         <!--Points to the reference below -->
     </bean>
 
 
-    <reference id="connectionManagerBean"
+    <reference id="connectionManager"
                interface="org.lesie.connection.ConnectionManager">
     </reference>
 

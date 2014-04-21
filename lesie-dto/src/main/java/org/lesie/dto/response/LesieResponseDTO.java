@@ -2,6 +2,8 @@ package org.lesie.dto.response;
 
 import org.lesie.dto.LesieDTO;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *      Copyright 2014 CPUT
  *
@@ -17,7 +19,7 @@ import org.lesie.dto.LesieDTO;
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
-
+@XmlRootElement(name="response")
 public class LesieResponseDTO extends LesieDTO{
 
     private Object result;

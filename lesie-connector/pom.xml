@@ -16,6 +16,15 @@
     <name>lesie-connector Blueprint Bundle</name>
     <description>lesie-connector OSGi blueprint bundle project.</description>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-dto</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -28,7 +37,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>org.lesie.connection.*</Export-Package>
-                        <Import-Package>org.osgi.framework,*</Import-Package>
+                        <Import-Package>org.osgi.framework,org.lesie.dto.response.*,org.lesie.dto.request.*,*</Import-Package>
                     </instructions>
                 </configuration>
             </plugin>

@@ -29,6 +29,13 @@
 
         <dependency>
             <groupId>org.lesie</groupId>
+            <artifactId>lesie-dto</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.lesie</groupId>
             <artifactId>lesie-kernel</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>provided</scope>
@@ -51,7 +58,7 @@
                             org.lesie.connection.impl;version=${project.version}
                         </Export-Package>
                         <Import-Package>
-                            org.osgi.framework,org.lesie.connection,*
+                            org.osgi.framework,org.lesie.connection,org.lesie.dto.response.*,org.lesie.dto.request.*,*
                         </Import-Package>
                     </instructions>
                 </configuration>

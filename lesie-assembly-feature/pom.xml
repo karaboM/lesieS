@@ -30,7 +30,7 @@
 
         <dependency>
             <groupId>org.lesie</groupId>
-            <artifactId>lesie-connector-api</artifactId>
+            <artifactId>lesie-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
