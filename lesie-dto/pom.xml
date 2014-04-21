@@ -5,32 +5,19 @@
         <artifactId>lesie-parent</artifactId>
         <groupId>org.lesie</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../lesie-parent</relativePath>
+        <relativePath>../lesie-parent/pom.xml</relativePath>
     </parent>
-
 
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.lesie</groupId>
-    <artifactId>lesie-kernel</artifactId>
+    <artifactId>lesie-dto</artifactId>
     <packaging>bundle</packaging>
 
-    <name>lesie-kernel Bundle</name>
-    <description>lesie-kernel OSGi bundle project.</description>
+    <name>lesie-dto Bundle</name>
+    <description>lesie-dto OSGi bundle project.</description>
 
     <dependencies>
-        <dependency>
-            <groupId>org.lesie</groupId>
-            <artifactId>lesie-queue-manager</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.lesie</groupId>
-            <artifactId>lesie-dto</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.core</artifactId>
@@ -50,12 +37,12 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
-                        <Bundle-Activator>org.lesie.boot.Application</Bundle-Activator>
+                        <Bundle-Activator>org.lesie.Activator</Bundle-Activator>
                         <Export-Package>
-                            org.lesie.kernel.*;version=${project.version}
+                            org.lesie.dto.request.*;version=${project.version},org.lesie.dto.response.*;version=${project.version}
                         </Export-Package>
                         <Import-Package>
-                            org.osgi.framework,org.lesie.queue,org.lesie.queue.manager,org.lesie.dto.response.*,org.lesie.dto.request.*,*;
+                            *
                         </Import-Package>
                     </instructions>
                 </configuration>

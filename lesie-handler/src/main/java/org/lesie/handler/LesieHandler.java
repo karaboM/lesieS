@@ -14,27 +14,11 @@
  *      limitations under the License.
  */
 
-package org.lesie.queue;
-
-import java.util.Map;
-
-public class QueueRequestObject {
-
-    private String commandName;
-    private Map<String,Object> parameters;
+package org.lesie.handler;
 
 
-    public QueueRequestObject(String commandName, Map<String, Object> parameters) {
-        this.commandName = commandName;
-        this.parameters = parameters;
+import org.lesie.dto.response.LesieResponseDTO;
 
-    }
-
-    public String getCommandName() {
-        return commandName;
-    }
-
-    public Map<String, Object> getParameters() {
-        return parameters;
-    }
+public interface LesieHandler {
+    public LesieResponseDTO processRequest();
 }

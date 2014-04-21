@@ -42,6 +42,18 @@
 
         <dependency>
             <groupId>org.lesie</groupId>
+            <artifactId>lesie-dto</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-handler</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.lesie</groupId>
             <artifactId>lesie-kernel</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

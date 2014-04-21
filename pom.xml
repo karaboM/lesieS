@@ -18,6 +18,8 @@
         <module>lesie-parent</module>
         <module>lesie-assembly-feature</module>
         <module>lesie-distribution</module>
+        <module>lesie-handler</module>
+        <module>lesie-dto</module>
     </modules>
 
     <build>

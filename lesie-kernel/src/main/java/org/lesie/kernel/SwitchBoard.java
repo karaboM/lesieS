@@ -16,32 +16,11 @@
 
 package org.lesie.kernel;
 
-import org.lesie.queue.QueueManager;
-import org.lesie.queue.QueueRequestObject;
-import org.lesie.queue.QueueResponseObject;
 
 import java.util.Map;
 
-public class SwitchBoard {
+public interface SwitchBoard {
 
-    private QueueManager queueManager;
+    public Object command(String commandName,Map<String,Object> parameters);
 
-
-    public SwitchBoard(){};
-
-    public Object command(String commandName,Map<String,Object> parameters){
-        QueueRequestObject requestObj = new QueueRequestObject(commandName,parameters);
-        String requestToken = queueManager.queueRequest(requestObj);
-        QueueResponseObject responseObject = queueManager.queueResponse(requestToken);
-        return responseObject.getResult();
-    };
-
-
-    public QueueManager getQueueManager() {
-        return queueManager;
-    }
-
-    public void setQueueManager(QueueManager queueManager) {
-        this.queueManager = queueManager;
-    }
 }

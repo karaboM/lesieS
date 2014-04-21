@@ -2,5 +2,12 @@
 
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
 
+    <bean id="switchBoardImplBean" class="org.lesie.kernel.impl.SwitchBoardImpl">
+        <property name="queueManager" ref="queueManager"/>
+    </bean>
+
+    <service id="switchBoard"  ref="switchBoardImplBean" interface="org.lesie.kernel.SwitchBoard"/>
+
+    <reference id="queueManager" interface="org.lesie.queue.manager.QueueManager"/>
 
 </blueprint>

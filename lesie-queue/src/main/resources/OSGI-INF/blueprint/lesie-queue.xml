@@ -16,10 +16,7 @@
         -->
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" default-activation="lazy">
 
-    <bean id="inQueueBean" class="org.lesie.queue.impl.LesieQueueImpl"/>
-    <service id="inQueue" ref="inQueueBean" interface="org.lesie.queue.LesieQueue"/>
-
-    <bean id="outQueueBean" class="org.lesie.queue.impl.LesieQueueImpl"/>
-    <service id="outQueue" ref="outQueueBean" interface="org.lesie.queue.LesieQueue"/>
+    <bean id="workQueueBean" class="org.lesie.queue.impl.LesieQueueImpl"/>
+    <service id="workQueue" ref="workQueueBean" interface="org.lesie.queue.LesieQueue"/>
 
 </blueprint>

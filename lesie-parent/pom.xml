@@ -29,7 +29,9 @@
         <module>../lesie-processor-pool</module>
         <module>../lesie-processor-manager</module>
         <module>../lesie-queue-manager</module>
-
+      <!--  <module>../lesie-queue-manager-impl</module>-->
+        <module>../lesie-dto</module>
+        <module>../lesie-handler</module>
     </modules>
 
     <dependencies>

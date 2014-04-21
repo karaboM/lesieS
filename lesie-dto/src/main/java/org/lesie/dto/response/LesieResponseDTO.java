@@ -1,3 +1,7 @@
+package org.lesie.dto.response;
+
+import org.lesie.dto.LesieDTO;
+
 /**
  *      Copyright 2014 CPUT
  *
@@ -14,15 +18,10 @@
  *      limitations under the License.
  */
 
-package org.lesie.queue;
-
-import java.util.Date;
-
-public class QueueResponseObject {
+public class LesieResponseDTO extends LesieDTO{
 
     private Object result;
-    private String requestToken;
-    private Date timestamp;
+
 
     public Object getResult() {
         return result;
@@ -32,19 +31,4 @@ public class QueueResponseObject {
         this.result = result;
     }
 
-    public Date getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public String getRequestToken() {
-        return requestToken;
-    }
-
-    public void setRequestToken(String requestToken) {
-        this.requestToken = requestToken;
-    }
 }

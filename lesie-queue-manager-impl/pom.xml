@@ -8,24 +8,6 @@
         <relativePath>../lesie-token-api/pom.xml</relativePath>
     </parent>
 
-    <!--
-
-        Licensed to the Apache Software Foundation (ASF) under one or more
-        contributor license agreements.  See the NOTICE file distributed with
-        this work for additional information regarding copyright ownership.
-        The ASF licenses this file to You under the Apache License, Version 2.0
-        (the "License"); you may not use this file except in compliance with
-        the License.  You may obtain a copy of the License at
-
-            http://www.apache.org/licenses/LICENSE-2.0
-
-        Unless required by applicable law or agreed to in writing, software
-        distributed under the License is distributed on an "AS IS" BASIS,
-        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-        See the License for the specific language governing permissions and
-        limitations under the License.
-    -->
-
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.lesie</groupId>
@@ -50,10 +32,22 @@
         </dependency>
 
         <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-dto</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.core</artifactId>
             <version>4.3.1</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>14.0.1</version>
         </dependency>
     </dependencies>
 
@@ -69,10 +63,10 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>
-                            org.lesie.queue.impl;version=${project.version}
+                            org.lesie.queue.manager.impl
                         </Export-Package>
                         <Import-Package>
-                            org.osgi.*,org.lesie.queue.*;version=${project.version}
+                            com.google.common.*;org.osgi.*,org.lesie.dto.*,org.lesie.queue,org.lesie.queue.manager;
                         </Import-Package>
                     </instructions>
                 </configuration>

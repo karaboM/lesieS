@@ -1,5 +1,6 @@
+package org.lesie.dto.request;
 /**
- *      Copyright 2013 CPUT
+ *      Copyright 2014 CPUT
  *
  *      Licensed under the Apache License, Version 2.0 (the "License");
  *      you may not use this file except in compliance with the License.
@@ -14,25 +15,26 @@
  *      limitations under the License.
  */
 
-package org.lesie.queue.impl;
+import org.lesie.dto.LesieDTO;
 
-import org.lesie.queue.LesieQueue;
-import org.lesie.queue.QueueRequestObject;
+import java.util.Map;
 
-import java.util.concurrent.Callable;
+public class LesieRequestDTO extends LesieDTO{
 
-public class RequestWorker implements Callable<String> {
+    private Map<String,Object> parameters;
 
-    private LesieQueue inQueue;
 
-    private QueueRequestObject queueRequestObject;
+    public LesieRequestDTO(String commandName, Map<String, Object> parameters) {
+        this.commandName = commandName;
+        this.parameters = parameters;
 
-    public RequestWorker(LesieQueue inQueue){
-        this.inQueue = inQueue;
     }
 
-    @Override
-    public String call() throws Exception {
-        return null;
+    public String getCommandName() {
+        return commandName;
+    }
+
+    public Map<String, Object> getParameters() {
+        return parameters;
     }
 }

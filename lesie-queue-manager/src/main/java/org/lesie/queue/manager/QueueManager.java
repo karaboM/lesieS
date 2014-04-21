@@ -14,10 +14,13 @@
  *      limitations under the License.
  */
 
-package org.lesie.queue;
+package org.lesie.queue.manager;
 
+
+import org.lesie.dto.request.LesieRequestDTO;
+import org.lesie.dto.response.LesieResponseDTO;
 
 public interface QueueManager {
-    public String queueRequest(QueueRequestObject queueReqObj);
-    public QueueResponseObject queueResponse(String requestToken);
+    public String queueRequest(LesieRequestDTO queueReqObj);
+    public LesieResponseDTO queueResponse(String requestToken);
 }

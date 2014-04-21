@@ -15,10 +15,8 @@
  */
 package org.lesie.boot;
 
-import org.lesie.connection.ConnectionManager;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
 
 public class Application implements BundleActivator {
 

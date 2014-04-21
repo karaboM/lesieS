@@ -16,10 +16,13 @@
 
 package org.lesie.queue;
 
+import org.lesie.dto.request.LesieRequestDTO;
+import org.lesie.dto.response.LesieResponseDTO;
+
 public interface LesieQueue {
 
-    public String generateToken();
-    public Object findResponseByToken(String token);
-    public void processRequest(QueueRequestObject requestObj);
-
+    public LesieResponseDTO findResponseByToken(String token);
+    public String getCurrentToken();
+    public void addResponseByToken(String token,LesieResponseDTO responseObj);
+    public String addRequest(LesieRequestDTO requestObj);
 }

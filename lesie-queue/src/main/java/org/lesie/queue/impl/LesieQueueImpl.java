@@ -1,5 +1,5 @@
 /**
- *      Copyright 2013 CPUT
+ *      Copyright 2014 CPUT
  *
  *      Licensed under the Apache License, Version 2.0 (the "License");
  *      you may not use this file except in compliance with the License.
@@ -16,56 +16,103 @@
 
 package org.lesie.queue.impl;
 
+import org.lesie.dto.request.LesieRequestDTO;
+import org.lesie.dto.response.LesieResponseDTO;
 import org.lesie.queue.LesieQueue;
-import org.lesie.queue.QueueRequestObject;
-import org.lesie.queue.QueueResponseObject;
-import sun.org.mozilla.javascript.internal.ast.Block;
 
 import java.util.UUID;
 import java.util.concurrent.*;
 
-public class LesieQueueImpl  implements LesieQueue{
+public class LesieQueueImpl implements LesieQueue {
 
-    private BlockingQueue<QueueRequestObject> inQueue;
-    private BlockingQueue<QueueResponseObject> outQueue;
-    private ConcurrentMap<String,QUEUE_STATE> requestResponseMap;
+    private BlockingQueue<LesieRequestDTO> inQueue;
+    private ConcurrentMap<String, LesieResponseDTO> outMap;
+    private ConcurrentMap<String, QUEUE_STATE> requestResponseMap;
     private UUID uuid;
+    private String currentGeneratedToken;
 
-    private enum QUEUE_STATE{
+    private enum QUEUE_STATE {
         IN_QUEUE,
         OUT_QUEUE
     }
 
-    public LesieQueueImpl(){
-        inQueue = new LinkedBlockingDeque<QueueRequestObject>() ;
-        outQueue = new LinkedBlockingDeque<QueueResponseObject>();
+    public LesieQueueImpl() {
+        inQueue = new LinkedBlockingDeque<LesieRequestDTO>();
+        outMap = new ConcurrentHashMap<String, LesieResponseDTO>();
         requestResponseMap = new ConcurrentHashMap<String, QUEUE_STATE>();
     }
 
     @Override
-    public String generateToken() {
-        String token = uuid.toString();
+    public LesieResponseDTO findResponseByToken(String token) {
 
-        if(requestResponseMap.containsKey(token) == false){
-            requestResponseMap.put(token,QUEUE_STATE.IN_QUEUE);
-        }else{
-            QUEUE_STATE currentState = requestResponseMap.get(token);
-            if(currentState.equals(QUEUE_STATE.OUT_QUEUE)){
-                //throw exception here to indicate that the token has already been added to the queue
-
+        if (requestResponseMap.containsKey(token)) {
+            QUEUE_STATE state = requestResponseMap.get(token);
+            if (state == QUEUE_STATE.OUT_QUEUE) {
+                if (outMap.containsKey(token)) {
+                    return outMap.get(token);
+                }
             }
         }
 
         return null;
     }
 
+
     @Override
-    public Object findResponseByToken(String token) {
-        return null;
+    public String getCurrentToken() {
+        return currentGeneratedToken;
     }
 
     @Override
-    public void processRequest(QueueRequestObject requestObj) {
+    public void addResponseByToken(String token, LesieResponseDTO responseObj) {
+        if (requestResponseMap.containsKey(token)) {
+            QUEUE_STATE state = requestResponseMap.get(token);
+            if (state == QUEUE_STATE.IN_QUEUE) {
+                state = QUEUE_STATE.OUT_QUEUE;
+                if (requestResponseMap.replace(token, QUEUE_STATE.IN_QUEUE, QUEUE_STATE.OUT_QUEUE)) {
+                    outMap.putIfAbsent(token, responseObj);
+                }
+            }
+        }
 
+    }
+
+    @Override
+    public String addRequest(LesieRequestDTO requestObj) {
+        String retVal = null;
+        try {
+            retVal = generateToken();
+            inQueue.put(requestObj);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            retVal = null;
+            revertGeneratedToken(retVal);
+
+        }
+        return retVal;
+    }
+
+    private void revertGeneratedToken(String token) {
+        if(requestResponseMap.containsKey(token) && requestResponseMap.get(token) == QUEUE_STATE.IN_QUEUE){
+            requestResponseMap.remove(token);
+        }
+    }
+
+
+    private String generateToken() {
+        String token = UUID.randomUUID().toString();
+
+        if (requestResponseMap.containsKey(token) == false) {
+            requestResponseMap.put(token, QUEUE_STATE.IN_QUEUE);
+        } else {
+            QUEUE_STATE currentState = requestResponseMap.get(token);
+            if (currentState.equals(QUEUE_STATE.IN_QUEUE)) {
+                //throw exception here to indicate that the token has already been added to the queue
+
+            }
+        }
+        currentGeneratedToken = token;
+        return token;
     }
 }
