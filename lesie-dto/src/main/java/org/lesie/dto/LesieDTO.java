@@ -16,9 +16,17 @@
 
 package org.lesie.dto;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class LesieDTO {
 
     protected String commandName;
+    @XmlTransient
     protected String requestToken;
     protected String sessionToken;
     protected String timestamp;

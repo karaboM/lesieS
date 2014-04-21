@@ -17,8 +17,9 @@
 package org.lesie.handler;
 
 
+import org.lesie.dto.request.LesieRequestDTO;
 import org.lesie.dto.response.LesieResponseDTO;
 
 public interface LesieHandler {
-    public LesieResponseDTO processRequest();
+    public LesieResponseDTO processRequest(LesieRequestDTO requestDTO);
 }

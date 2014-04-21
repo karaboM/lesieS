@@ -3,6 +3,7 @@ package org.lesie.dto.response;
 import org.lesie.dto.LesieDTO;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Map;
 
 /**
  *      Copyright 2014 CPUT
@@ -19,17 +20,17 @@ import javax.xml.bind.annotation.XmlRootElement;
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
-@XmlRootElement(name="response")
+@XmlRootElement
 public class LesieResponseDTO extends LesieDTO{
 
-    private Object result;
+    private Map<String,String> result;
 
 
-    public Object getResult() {
+    public Map getResult() {
         return result;
     }
 
-    public void setResult(Object result) {
+    public void setResult(Map result) {
         this.result = result;
     }
 

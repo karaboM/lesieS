@@ -22,6 +22,8 @@ import org.lesie.queue.LesieQueue;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.Callable;
 
 public class RequestWorker implements Callable<LesieResponseDTO> {
@@ -44,10 +46,12 @@ public class RequestWorker implements Callable<LesieResponseDTO> {
         LesieResponseDTO responseObject = new LesieResponseDTO();
         Date date = new Date();
         Timestamp timestamp = new Timestamp(date.getTime());
+        Map result = new HashMap<String,String>();
+        result.put("sessionKey","123456");
 
         responseObject.setRequestToken(workQueue.getCurrentToken());
         responseObject.setTimestamp(timestamp.toString());
-        responseObject.setResult(new String("hahahaha"));
+        responseObject.setResult(result);
 
         return responseObject;
     }
