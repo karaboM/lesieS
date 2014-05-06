@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>lesie-token-api</artifactId>
+        <artifactId>lesie-parent</artifactId>
         <groupId>org.lesie</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../lesie-token-api/pom.xml</relativePath>
+        <relativePath>../lesie-parent</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -21,6 +21,18 @@
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-queue-manager</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-handler</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-handler-impl</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
@@ -63,10 +75,10 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>
-                            org.lesie.queue.manager.impl
+                            org.lesie.queue.manager.impl.*
                         </Export-Package>
                         <Import-Package>
-                            com.google.common.*;org.osgi.*,org.lesie.dto.*,org.lesie.queue,org.lesie.queue.manager;
+                            com.google.common.*;org.osgi.*,org.lesie.handler.*,org.lesie.dto.*,org.lesie.queue,org.lesie.queue.manager;
                         </Import-Package>
                     </instructions>
                 </configuration>

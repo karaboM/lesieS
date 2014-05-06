@@ -82,6 +82,7 @@ public class LesieQueueImpl implements LesieQueue {
         String retVal = null;
         try {
             retVal = generateToken();
+            requestObj.setRequestToken(retVal);
             inQueue.put(requestObj);
 
         } catch (InterruptedException e) {
@@ -91,6 +92,11 @@ public class LesieQueueImpl implements LesieQueue {
 
         }
         return retVal;
+    }
+
+    @Override
+    public LesieRequestDTO popRequest() {
+        return inQueue.poll();
     }
 
     private void revertGeneratedToken(String token) {

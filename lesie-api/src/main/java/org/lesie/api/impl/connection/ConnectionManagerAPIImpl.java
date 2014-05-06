@@ -20,6 +20,8 @@ import org.lesie.api.connection.ConnectionManagerAPI;
 import org.lesie.connection.ConnectionManager;
 import org.lesie.dto.response.LesieResponseDTO;
 
+import javax.ws.rs.QueryParam;
+
 public class ConnectionManagerAPIImpl implements ConnectionManagerAPI {
 
 
@@ -35,12 +37,12 @@ public class ConnectionManagerAPIImpl implements ConnectionManagerAPI {
 
 
     @Override
-    public LesieResponseDTO connect(String clientName, String identityKey) {
-        return connectionManager.connect(clientName,identityKey);
+    public LesieResponseDTO login(String clientName, String identityKey) {
+        return connectionManager.login(clientName,identityKey);
     }
 
     @Override
-    public LesieResponseDTO disconnect(String clientName, String sessionKey) {
-        return connectionManager.disconnect(clientName,sessionKey);
+    public LesieResponseDTO logout(String clientName, String sessionKey) {
+        return connectionManager.logout(clientName,sessionKey);
     }
 }

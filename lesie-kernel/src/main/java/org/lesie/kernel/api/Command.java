@@ -18,8 +18,8 @@ package org.lesie.kernel.api;
 
 public class Command {
 
-    public static String CONNECT         = "lesie-connect";
-    public static String DISCONNECT      = "lesie-disconnect";
+    public static String LOGIN         = "lesie-login";
+    public static String LOGOUT      = "lesie-logout";
     public static String MARKED_ENTITIES = "lesie-marked-entities";
     public static String REGISTER_APP    = "lesie-register-app";
     public static String REGISTER_ENTITY = "lesie-register-entity";

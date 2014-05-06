@@ -23,6 +23,6 @@ import java.util.Map;
 
 public interface SwitchBoard {
 
-    public LesieResponseDTO command(String commandName,Map<String,Object> parameters);
+    public LesieResponseDTO command(String commandName,Map<String,String> parameters);
 
 }

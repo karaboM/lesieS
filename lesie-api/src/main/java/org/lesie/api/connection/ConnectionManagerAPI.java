@@ -22,17 +22,19 @@ import org.lesie.dto.response.LesieResponseDTO;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 
 @Path("/connector")
 @Produces("application/json")
 public interface ConnectionManagerAPI {
 
     @GET
-    @Path("/connect/{clientName}/{indentityKey}")
-    public LesieResponseDTO connect(String clientName,String identityKey);
+    @Path("/login")
+    public LesieResponseDTO login(@QueryParam("clientName") String clientName,
+                                  @QueryParam("identityKey") String identityKey);
 
 
     @GET
-    @Path("/disconnect/{clientName},{sessionKey}")
-    public LesieResponseDTO disconnect(String clientName,String sessionKey);
+    @Path("/logout")
+    public LesieResponseDTO logout(@QueryParam("clientName") String clientName,@QueryParam("sessionKey") String sessionKey);
 }

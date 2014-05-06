@@ -18,6 +18,7 @@ package org.lesie.queue.manager.impl;
 
 import org.lesie.dto.request.LesieRequestDTO;
 import org.lesie.dto.response.LesieResponseDTO;
+import org.lesie.handler.LesieHandler;
 import org.lesie.queue.LesieQueue;
 
 import java.sql.Timestamp;
@@ -29,17 +30,21 @@ import java.util.concurrent.Callable;
 public class RequestWorker implements Callable<LesieResponseDTO> {
 
     private LesieQueue workQueue;
+    private LesieHandler firstHandler;
 
     private LesieRequestDTO queueRequestObject;
     private LesieResponseDTO queueResponseObject;
 
-    public RequestWorker(LesieQueue workQueue) {
+    public RequestWorker(LesieQueue workQueue, LesieHandler firstHandler) {
         this.workQueue = workQueue;
+        this.firstHandler = firstHandler;
+        this.queueRequestObject = workQueue.popRequest();
     }
 
     @Override
     public LesieResponseDTO call() throws Exception {
-        return dummyResponse();
+
+        return firstHandler.processRequest(queueRequestObject);
     }
 
     private LesieResponseDTO dummyResponse() {
@@ -54,5 +59,9 @@ public class RequestWorker implements Callable<LesieResponseDTO> {
         responseObject.setResult(result);
 
         return responseObject;
+    }
+
+    public void setFirstHandler(LesieHandler firstHandler) {
+        this.firstHandler = firstHandler;
     }
 }

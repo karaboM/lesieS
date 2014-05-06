@@ -52,10 +52,10 @@
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Bundle-Activator>org.lesie.boot.Application</Bundle-Activator>
                         <Export-Package>
-                            org.lesie.kernel.*;version=${project.version}
+                            org.lesie.kernel.*;
                         </Export-Package>
                         <Import-Package>
-                            org.osgi.framework,org.lesie.queue,org.lesie.queue.manager,org.lesie.dto.response.*,org.lesie.dto.request.*,*;
+                            org.osgi.*,org.lesie.queue,org.lesie.queue.manager,org.lesie.dto.*;
                         </Import-Package>
                     </instructions>
                 </configuration>

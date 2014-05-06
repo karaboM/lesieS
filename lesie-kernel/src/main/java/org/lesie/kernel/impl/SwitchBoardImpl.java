@@ -31,7 +31,7 @@ public class SwitchBoardImpl implements SwitchBoard {
     public SwitchBoardImpl(){};
 
     @Override
-    public LesieResponseDTO command(String commandName,Map<String,Object> parameters){
+    public LesieResponseDTO command(String commandName,Map<String,String> parameters){
         LesieRequestDTO requestObj = new LesieRequestDTO(commandName,parameters);
         String requestToken = queueManager.queueRequest(requestObj);
         LesieResponseDTO responseObject = queueManager.queueResponse(requestToken);

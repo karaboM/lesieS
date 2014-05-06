@@ -11,13 +11,25 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.lesie</groupId>
-    <artifactId>lesie-dto</artifactId>
+    <artifactId>lesie-handler-impl</artifactId>
     <packaging>bundle</packaging>
 
-    <name>lesie-dto Bundle</name>
-    <description>lesie-dto OSGi bundle project.</description>
+    <name>lesie-handler-impl Bundle</name>
+    <description>lesie-handler-impl OSGi bundle project.</description>
 
     <dependencies>
+        <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-handler</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-dto</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.core</artifactId>
@@ -37,12 +49,11 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
-                        <Bundle-Activator>org.lesie.Activator</Bundle-Activator>
                         <Export-Package>
-                            org.lesie.dto.*;
+                            org.lesie.handler.impl
                         </Export-Package>
                         <Import-Package>
-                            org.osgi.*,javax.xml.*;
+                            org.osgi.*,org.lesie.dto.*,org.lesie.handler.*;
                         </Import-Package>
                     </instructions>
                 </configuration>

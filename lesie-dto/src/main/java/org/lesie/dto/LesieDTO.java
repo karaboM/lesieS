@@ -20,6 +20,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -30,6 +32,18 @@ public class LesieDTO {
     protected String requestToken;
     protected String sessionToken;
     protected String timestamp;
+
+    public void fillSimilar(LesieDTO otherDTO){
+        this.commandName = otherDTO.getCommandName();
+        this.requestToken = otherDTO.getRequestToken();
+        this.sessionToken = otherDTO.getSessionToken();
+    }
+
+    public void generateTimestamp(){
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DDThh:mmTZD");
+       this.timestamp = sdf.format(date);
+    };
 
     public String getCommandName() {
         return commandName;

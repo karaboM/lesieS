@@ -25,4 +25,5 @@ public interface LesieQueue {
     public String getCurrentToken();
     public void addResponseByToken(String token,LesieResponseDTO responseObj);
     public String addRequest(LesieRequestDTO requestObj);
+    public LesieRequestDTO popRequest();
 }

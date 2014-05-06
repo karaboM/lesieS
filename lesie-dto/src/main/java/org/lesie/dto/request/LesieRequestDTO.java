@@ -21,10 +21,10 @@ import java.util.Map;
 
 public class LesieRequestDTO extends LesieDTO{
 
-    private Map<String,Object> parameters;
+    private Map<String,String> parameters;
 
 
-    public LesieRequestDTO(String commandName, Map<String, Object> parameters) {
+    public LesieRequestDTO(String commandName, Map<String, String> parameters) {
         this.commandName = commandName;
         this.parameters = parameters;
 
@@ -34,7 +34,7 @@ public class LesieRequestDTO extends LesieDTO{
         return commandName;
     }
 
-    public Map<String, Object> getParameters() {
+    public Map<String, String> getParameters() {
         return parameters;
     }
 }

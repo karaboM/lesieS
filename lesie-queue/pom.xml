@@ -45,10 +45,10 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>
-                            org.lesie.queue.*;version=${project.version}
+                            org.lesie.queue.*;
                         </Export-Package>
                         <Import-Package>
-                            org.osgi.*, org.lesie.dto.request.*;version=${project.version}, org.lesie.dto.response.*;version=${project.version}
+                            org.osgi.*, org.lesie.dto.request, org.lesie.dto.response
                         </Import-Package>
                     </instructions>
                 </configuration>

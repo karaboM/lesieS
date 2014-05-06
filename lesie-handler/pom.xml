@@ -45,10 +45,10 @@
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Bundle-Activator>org.lesie.handler.activator.HandlerActivator</Bundle-Activator>
                         <Export-Package>
-                            org.lesie*;version=${project.version}
+                            org.lesie.handler
                         </Export-Package>
                         <Import-Package>
-                            org.lesie.dto.*,*
+                            org.osgi.*,org.lesie.dto.response,org.lesie.dto.request;
                         </Import-Package>
                     </instructions>
                 </configuration>

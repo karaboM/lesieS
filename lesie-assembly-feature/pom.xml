@@ -54,19 +54,19 @@
 
         <dependency>
             <groupId>org.lesie</groupId>
+            <artifactId>lesie-handler-impl</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-session-handler</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.lesie</groupId>
             <artifactId>lesie-kernel</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.lesie</groupId>
-            <artifactId>lesie-processor-pool</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.lesie</groupId>
-            <artifactId>lesie-queue-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
@@ -81,27 +81,6 @@
             <artifactId>lesie-queue-manager-impl</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.lesie</groupId>
-            <artifactId>lesie-token-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.lesie</groupId>
-            <artifactId>lesie-user-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.lesie</groupId>
-            <artifactId>lesie-user-loader</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-
-
     </dependencies>
 
     <build>
