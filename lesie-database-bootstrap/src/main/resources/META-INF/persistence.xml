@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             version="1.0">
+
+
+    <persistence-unit name="lesie-unit" transaction-type="RESOURCE_LOCAL">
+        <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+        <non-jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=jdbc/postgresds)</non-jta-data-source>
+        <class>org.lesie.model.Notification</class>
+        <class>org.lesie.model.Application</class>
+        <class>org.lesie.model.Organisation</class>
+        <class>org.lesie.model.Policy</class>
+        <class>org.lesie.model.Session</class>
+        <class>org.lesie.model.User</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <!--             <property name="openjpa.BrokerImpl" value="non-finalizing" />  -->
+            <!--             <property name="openjpa.Sequence" value="table(Table=OPENJPASEQ, Increment=100)"/> -->
+            <!--             <property name="openjpa.jdbc.UpdateManager" value="org.apache.openjpa.jdbc.kernel.BatchingConstraintUpdateManager"/> -->
+            <!-- These properties are creating the database on the fly. We are using them to avoid users having
+            to create a database to run the sample. This is not something that should be used in production.
+            See also the create=true line in the ariestrader-derby-ds blueprint meta data -->
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema"/>
+            <property name="openjpa.jdbc.DBDictionary" value="postgres"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>

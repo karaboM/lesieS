@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+    <!-- PostgresSQL -->
+    <bean id="dataSourcePostgres" class="org.postgresql.ds.PGPoolingDataSource" destroy-method="close">
+        <property name="serverName" value="localhost:5432/lesie"/>
+        <property name="user" value="lesie-user"/>
+        <property name="password" value="12345"/>
+        <property name="dataSourceName" value="myConnectionPool"/>
+        <property name="initialConnections" value="2"/>
+        <property name="maxConnections" value="4"/>
+    </bean>
+
+    <service interface="javax.sql.DataSource" ref="dataSourcePostgres">
+        <service-properties>
+            <entry key="osgi.jndi.service.name" value="jdbc/postgresds"/>
+        </service-properties>
+    </service>
+
+    <!-- HSQLDB -->
+<!--    <bean id="dataSource" class="org.hsqldb.jdbc.JDBCDataSource">
+        <property name="URL" value="jdbc:hsqldb:file:~/hsqldb"/>
+        <property name="user" value="sa"/>
+        <property name="password" value=""/>
+    </bean>
+
+    <service interface="javax.sql.DataSource" ref="dataSource">
+        <service-properties>
+            <entry key="osgi.jndi.service.name" value="jdbc/hsqlds"/>
+        </service-properties>
+    </service>-->
+</blueprint>

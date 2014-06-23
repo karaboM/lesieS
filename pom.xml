@@ -11,13 +11,14 @@
 
 
     <properties>
-        <karaf.version>2.3.1</karaf.version>
+        <karaf.version>2.3.5</karaf.version>
     </properties>
 
     <modules>
         <module>lesie-parent</module>
         <module>lesie-assembly-feature</module>
         <module>lesie-distribution</module>
+        <module>lesie-jpa-feature</module>
     </modules>
 
     <build>

@@ -6,7 +6,7 @@
     <fileSets>
         <!-- Expanded Karaf Standard Distribution -->
         <fileSet>
-            <directory>target/dependencies/apache-karaf-2.3.1
+            <directory>target/dependencies/apache-karaf-2.3.5
             </directory>
             <outputDirectory>/</outputDirectory>
             <excludes>
@@ -29,7 +29,7 @@
         <!-- Copy over bin/* separately to get the correct file
         mode -->
         <fileSet>
-            <directory>target/dependencies/apache-karaf-2.3.1/bin
+            <directory>target/dependencies/apache-karaf-2.3.5/bin
             </directory>
             <outputDirectory>/bin</outputDirectory>
             <includes>
@@ -53,7 +53,7 @@
             <fileMode>0644</fileMode>
         </fileSet>
         <fileSet>
-            <directory>target/dependencies/apache-karaf-2.3.1/lib</directory>
+            <directory>target/dependencies/apache-karaf-2.3.5/lib</directory>
             <outputDirectory>/lib/</outputDirectory>
 
         </fileSet>

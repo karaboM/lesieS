@@ -41,7 +41,7 @@ public class LesieDTO {
 
     public void generateTimestamp(){
         Date date = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DDThh:mmTZD");
+        SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DD hh:mm");
        this.timestamp = sdf.format(date);
     };
 

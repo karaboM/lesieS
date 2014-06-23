@@ -14,8 +14,6 @@
     <artifactId>lesie-assembly-feature</artifactId>
 
     <dependencies>
-
-
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-connector</artifactId>
@@ -81,14 +79,42 @@
             <artifactId>lesie-queue-manager-impl</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-datasource</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-database-bootstrap</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.karaf.tooling</groupId>
+                    <artifactId>karaf-maven-plugin</artifactId>
+                    <version>3.0.0.RC1</version>
+                    <extensions>true</extensions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>features-maven-plugin</artifactId>
-                <version>${karaf.version}</version>
                 <executions>
                     <execution>
                         <id>generate</id>
