@@ -7,7 +7,7 @@
         <property name="serverName" value="localhost:5432/lesie"/>
         <property name="user" value="lesie-user"/>
         <property name="password" value="12345"/>
-        <property name="dataSourceName" value="myConnectionPool"/>
+        <property name="dataSourceName" value="dataSourcePostgres"/>
         <property name="initialConnections" value="2"/>
         <property name="maxConnections" value="4"/>
     </bean>
