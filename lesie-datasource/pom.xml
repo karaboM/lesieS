@@ -26,17 +26,20 @@
             <version>4.3.1</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.postgresql</artifactId>
-            <version>9.2-1003-jdbc4_1</version>
-            <scope>provided</scope>
+            <artifactId>org.apache.servicemix.bundles.hsqldb</artifactId>
+            <version>1.8.0.10_2</version>
         </dependency>
+
         <dependency>
-            <groupId>hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-            <version>1.8.0.10</version>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.derby</artifactId>
+            <version>10.10.2.0_1</version>
         </dependency>
+
+
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.postgresql</artifactId>
@@ -68,7 +71,7 @@
                             org.lesie*;version=${project.version}
                         </Export-Package>
                         <Import-Package>
-                            org.osgi.*,org.postgresql.*,org.hsqldb.*,*;
+                            *;
                         </Import-Package>
                     </instructions>
                 </configuration>

@@ -18,7 +18,6 @@
         <module>lesie-parent</module>
         <module>lesie-assembly-feature</module>
         <module>lesie-distribution</module>
-        <module>lesie-jpa-feature</module>
     </modules>
 
     <build>

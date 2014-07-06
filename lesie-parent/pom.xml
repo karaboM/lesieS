@@ -31,7 +31,8 @@
         <module>../lesie-model</module>
         <module>../lesie-datasource</module>
         <module>../lesie-notification-handler</module>
-        <module>../lesie-database-bootstrap</module>
+        <module>../lesie-data-bootstrap</module>
+        <module>../lesie-dao</module>
         <module>../lesie-jpa-feature</module>
     </modules>
 

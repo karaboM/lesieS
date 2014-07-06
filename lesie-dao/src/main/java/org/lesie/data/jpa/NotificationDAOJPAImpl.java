@@ -14,23 +14,10 @@
  *      limitations under the License.
  */
 
-package org.lesie.model;
+package org.lesie.data.jpa;
 
-import javax.persistence.*;
-import java.util.List;
+import org.lesie.data.CrudDAO;
+import org.lesie.model.Notification;
 
-@Entity
-@Table(name="LesieUser")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long id;
-
-    private String globalKey;
-    private String Name;
-    private String Surname;
-
-    @OneToMany
-    private List<Notification> notifications;
-
+public class NotificationDAOJPAImpl extends CrudDAOJPAImpl<Long,Notification> implements CrudDAO<Long,Notification> {
 }

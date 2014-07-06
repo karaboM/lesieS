@@ -4,9 +4,8 @@
              version="1.0">
 
 
-    <persistence-unit name="lesie-unit" transaction-type="RESOURCE_LOCAL">
-        <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
-        <non-jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=jdbc/postgresds)</non-jta-data-source>
+    <persistence-unit name="lesie-unit" transaction-type="JTA">
+        <jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=jdbc/postgresds)</jta-data-source>
         <class>org.lesie.model.Notification</class>
         <class>org.lesie.model.Application</class>
         <class>org.lesie.model.Organisation</class>
@@ -22,8 +21,10 @@
             <!-- These properties are creating the database on the fly. We are using them to avoid users having
             to create a database to run the sample. This is not something that should be used in production.
             See also the create=true line in the ariestrader-derby-ds blueprint meta data -->
-            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema"/>
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
             <property name="openjpa.jdbc.DBDictionary" value="postgres"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:postgresql://localhost:5432/lesie"/>
+            <property name="openjpa.ConnectionDriverName" value="org.apache.derby.jdbc.EmbeddedDriver"/>
         </properties>
     </persistence-unit>
 

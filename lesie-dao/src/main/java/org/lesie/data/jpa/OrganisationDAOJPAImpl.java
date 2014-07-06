@@ -16,15 +16,7 @@
 
 package org.lesie.data.jpa;
 
-import org.lesie.data.CrudDAO;
-import org.lesie.model.Notification;
+import org.lesie.model.Organisation;
 
-public class NotificationDAOJPAImpl extends CrudDAOJPAImpl<Long,Notification> implements CrudDAO<Long,Notification> {
-    public void addNotification(){
-        Notification n = new Notification();
-        n.setId(1234);
-        n.setMessage("Mes");
-
-        add(n);
-    }
+public class OrganisationDAOJPAImpl extends CrudDAOJPAImpl<Long,Organisation> {
 }

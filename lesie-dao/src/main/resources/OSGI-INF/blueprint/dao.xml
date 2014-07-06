@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<blueprint  default-activation="eager"
+            xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:jpa="http://aries.apache.org/xmlns/jpa/v1.0.0"
+            xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.0.0">
+
+    <bean id="notificationDAOJPA"  class="org.lesie.data.jpa.NotificationDAOJPAImpl">
+        <jpa:context unitname="lesie-unit" property="entityManager"/>
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+
+    <bean id="organisationDAOJPA"  class="org.lesie.data.jpa.OrganisationDAOJPAImpl">
+        <jpa:context unitname="lesie-unit" property="entityManager"/>
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+
+    <bean id="sessionDAOJPA"  class="org.lesie.data.jpa.SessionDAOJPAImpl">
+        <jpa:context unitname="lesie-unit" property="entityManager"/>
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+
+    <bean id="userDAOJPA"  class="org.lesie.data.jpa.UserDAOJPAImpl">
+        <jpa:context unitname="lesie-unit" property="entityManager"/>
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+
+    <bean id="applicationDAOJPA"  class="org.lesie.data.jpa.ApplicationDAOJPAImpl">
+        <jpa:context unitname="lesie-unit" property="entityManager"/>
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+
+    <bean id="policyDAOJPA"  class="org.lesie.data.jpa.PolicyDAOJPAImpl">
+        <jpa:context unitname="lesie-unit" property="entityManager"/>
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+
+
+    <service id="NotificationDAOService" ref="notificationDAOJPA" interface="org.lesie.data.CrudDAO"/>
+    <service id="OrganisationDAOService" ref="organisationDAOJPA" interface="org.lesie.data.CrudDAO"/>
+    <service id="SessionDAOService"      ref="sessionDAOJPA"      interface="org.lesie.data.CrudDAO"/>
+    <service id="UserDAOService"         ref="userDAOJPA"         interface="org.lesie.data.CrudDAO"/>
+    <service id="ApplicationDAOService"  ref="applicationDAOJPA"  interface="org.lesie.data.CrudDAO"/>
+    <service id="PolicyDAOService"       ref="policyDAOJPA"       interface="org.lesie.data.CrudDAO"/>
+
+</blueprint>

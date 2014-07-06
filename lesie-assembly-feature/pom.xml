@@ -94,7 +94,13 @@
 
         <dependency>
             <groupId>org.lesie</groupId>
-            <artifactId>lesie-database-bootstrap</artifactId>
+            <artifactId>lesie-data-bootstrap</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-dao</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

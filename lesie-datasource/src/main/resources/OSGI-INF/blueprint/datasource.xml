@@ -4,10 +4,11 @@
 
     <!-- PostgresSQL -->
     <bean id="dataSourcePostgres" class="org.postgresql.ds.PGPoolingDataSource" destroy-method="close">
-        <property name="serverName" value="localhost:5432/lesie"/>
+        <property name="serverName" value="localhost:5432"/>
         <property name="user" value="lesie-user"/>
         <property name="password" value="12345"/>
-        <property name="dataSourceName" value="dataSourcePostgres"/>
+        <property name="dataSourceName" value="jdbc/postgresds"/>
+        <property name="databaseName" value="lesie"/>
         <property name="initialConnections" value="2"/>
         <property name="maxConnections" value="4"/>
     </bean>
@@ -19,7 +20,7 @@
     </service>
 
     <!-- HSQLDB -->
-<!--    <bean id="dataSource" class="org.hsqldb.jdbc.JDBCDataSource">
+<!--    <bean id="dataSource" class="org.hsqldb.jdbc.jdbcDataSource">
         <property name="URL" value="jdbc:hsqldb:file:~/hsqldb"/>
         <property name="user" value="sa"/>
         <property name="password" value=""/>
@@ -28,6 +29,24 @@
     <service interface="javax.sql.DataSource" ref="dataSource">
         <service-properties>
             <entry key="osgi.jndi.service.name" value="jdbc/hsqlds"/>
+        </service-properties>
+    </service>-->
+
+    <!-- Derby -->
+ <!--   <bean id="dataSource" class="org.apache.derby.jdbc.EmbeddedXADataSource">
+        <property name="databaseName" value="lesie"/>
+        <property name="createDatabase" value="create" />
+    </bean>
+
+    <service ref="dataSource" interface="javax.sql.DataSource">
+        <service-properties>
+            <entry key="osgi.jndi.service.name" value="jdbc/derbyds"/>
+        </service-properties>
+    </service>
+
+    <service ref="dataSource" interface="javax.sql.XADataSource">
+        <service-properties>
+            <entry key="osgi.jndi.service.name" value="jdbc/derbydsxa"/>
         </service-properties>
     </service>-->
 </blueprint>

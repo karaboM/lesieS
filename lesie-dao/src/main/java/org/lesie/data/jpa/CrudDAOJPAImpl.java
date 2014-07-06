@@ -32,6 +32,7 @@ public class CrudDAOJPAImpl<K,T> implements CrudDAO<K,T>{
     @Override
     public void add(T newInstance) {
         em.persist(newInstance);
+
         em.flush();
      }
 
