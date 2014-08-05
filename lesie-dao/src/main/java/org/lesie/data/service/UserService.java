@@ -14,10 +14,11 @@
  *      limitations under the License.
  */
 
-package org.lesie.data.jpa;
+package org.lesie.data.service;
 
 import org.lesie.data.CrudDAO;
-import org.lesie.model.Notification;
+import org.lesie.model.User;
 
-public class NotificationDAOJPAImpl extends CrudDAOJPAImpl<Long,Notification> implements CrudDAO<Long,Notification> {
+
+public interface UserService extends CrudDAO<Long,User> {
 }

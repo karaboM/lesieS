@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3505613713">
+    <data-source source="LOCAL" name="Data Source" product="PostgreSQL" version="9.3.4" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.0 JDBC4 (build 801)" uuid="a9f59bfb-b66a-4b3b-9f95-fe554ef356d6">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/lesie</jdbc-url>
+      <user-name>lesie-user</user-name>
+      <user-password>df9bdf98df99df9edf9f</user-password>
+      <libraries>
+        <library>
+          <url>jar://$MAVEN_REPOSITORY$/postgresql/postgresql/9.1-901.jdbc4/postgresql-9.1-901.jdbc4.jar!/</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="Data Source [2]" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="41a51a66-5b68-44da-8f6a-88756a3ec596">
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby:lesie</jdbc-url>
+      <libraries>
+        <library>
+          <url>jar://$MAVEN_REPOSITORY$/org/apache/servicemix/bundles/org.apache.servicemix.bundles.derby/10.10.2.0_1/org.apache.servicemix.bundles.derby-10.10.2.0_1.jar!/</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+

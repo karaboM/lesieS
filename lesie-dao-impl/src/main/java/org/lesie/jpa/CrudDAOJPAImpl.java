@@ -14,7 +14,7 @@
  *      limitations under the License.
  */
 
-package org.lesie.data.jpa;
+package org.lesie.jpa;
 
 import org.lesie.data.CrudDAO;
 

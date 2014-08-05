@@ -4,9 +4,9 @@
     <feature name="hibernate" version="4.3.1.Final" description="Hibernate 4.3.x JPA persistence engine support" resolver="(obr)">
         <details>Enable Hibernate 4.3.x as persistence engine.</details>
         <feature>transaction</feature>
-        <feature>jpa</feature>
+        <feature>org.lesie.jpa</feature>
  <!--        <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-jpa_2.0_spec/1.1</bundle>-->
-        <bundle dependency="true">mvn:org.hibernate.javax.persistence/hibernate-jpa-2.1-api/1.0.0.Final</bundle>
+        <bundle dependency="true">mvn:org.hibernate.javax.persistence/hibernate-org.lesie.jpa-2.1-api/1.0.0.Final</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr/2.7.7_5</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.postgresql/9.3-1100-jdbc41_1</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ant/1.8.2_2</bundle>

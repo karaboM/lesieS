@@ -26,8 +26,34 @@ public class Organisation {
     private long id;
 
     private String name;
+    private String key;
 
 
-    @OneToMany
+
+    @OneToMany(cascade = CascadeType.PERSIST)
     private List<Application> applications;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public List<Application> getApplications() {
+        return applications;
+    }
+
+    public void setApplications(List<Application> applications) {
+        this.applications = applications;
+    }
 }

@@ -14,9 +14,11 @@
  *      limitations under the License.
  */
 
-package org.lesie.data.jpa;
+package org.lesie.data.service;
 
-import org.lesie.model.Session;
 
-public class SessionDAOJPAImpl extends CrudDAOJPAImpl<Long,Session> {
+import org.lesie.data.CrudDAO;
+import org.lesie.model.Application;
+
+public interface ApplicationService extends CrudDAO<Long,Application> {
 }

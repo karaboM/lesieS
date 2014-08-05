@@ -14,9 +14,10 @@
  *      limitations under the License.
  */
 
-package org.lesie.data.jpa;
+package org.lesie.jpa;
 
-import org.lesie.model.User;
+import org.lesie.data.service.ApplicationService;
+import org.lesie.model.Application;
 
-public class UserDAOJPAImpl extends CrudDAOJPAImpl<Long,User> {
+public class ApplicationDAOJPAImpl extends CrudDAOJPAImpl<Long,Application> implements ApplicationService{
 }

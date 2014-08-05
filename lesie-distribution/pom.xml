@@ -55,13 +55,6 @@
             <classifier>features</classifier>
         </dependency>
 
-        <dependency>
-            <groupId>org.lesie</groupId>
-            <artifactId>lesie-jpa-feature</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <type>xml</type>
-            <!--<classifier>features</classifier>-->
-        </dependency>
     </dependencies>
 
     <build>
@@ -114,9 +107,7 @@
                                 <descriptor>
                                     mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features
                                 </descriptor>
-                                <descriptor>
-                                    mvn:org.lesie/lesie-jpa-feature/${parent.version}/xml
-                                </descriptor>
+
                                 <descriptor>
                                     file:${project.parent.relativePath}/lesie-assembly-feature/target/xml/feature/lesie-feature.xml
                                 </descriptor>

@@ -33,7 +33,7 @@
         <module>../lesie-notification-handler</module>
         <module>../lesie-data-bootstrap</module>
         <module>../lesie-dao</module>
-        <module>../lesie-jpa-feature</module>
+        <module>../lesie-dao-impl</module>
     </modules>
 
     <dependencies>
