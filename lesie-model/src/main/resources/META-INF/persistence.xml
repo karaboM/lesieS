@@ -12,6 +12,7 @@
         <class>org.lesie.model.Policy</class>
         <class>org.lesie.model.Session</class>
         <class>org.lesie.model.User</class>
+        <class>org.lesie.model.Configuration</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>

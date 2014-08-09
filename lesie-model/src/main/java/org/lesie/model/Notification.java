@@ -26,8 +26,6 @@ public class Notification {
 
     private String message;
 
-    @ManyToOne
-    private User user;
 
     public long getId() {
         return id;
@@ -35,14 +33,6 @@ public class Notification {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public String getMessage() {

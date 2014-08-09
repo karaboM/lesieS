@@ -28,4 +28,5 @@ public class Policy {
     private long id;
 
     private String name;
+    private Double supportedVersion;
 }
