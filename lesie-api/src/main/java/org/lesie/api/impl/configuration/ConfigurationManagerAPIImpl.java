@@ -14,19 +14,25 @@
  *      limitations under the License.
  */
 
-package org.lesie.api.registration;
+package org.lesie.api.impl.configuration;
 
+import org.lesie.api.configuration.ConfigurationManagerAPI;
 import org.lesie.dto.response.LesieResponseDTO;
 
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+public class ConfigurationManagerAPIImpl implements ConfigurationManagerAPI{
 
-@Path("/registration")
-@Produces("application/json")
-public interface RegistrationManagerAPI {
+    private ConfigurationManager configManager;
 
-    public LesieResponseDTO registerOrganisation(String name);
-    public LesieResponseDTO registerApplication(String appName,String appDesc,String organisationName);
-    public LesieResponseDTO registerUser(String globalKey,String name,String surname);
+    @Override
+    public LesieResponseDTO getConfigByApplication(String appKey) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    public ConfigurationManager getConfigManager() {
+        return configManager;
+    }
+
+    public void setConfigManager(ConfigurationManager configManager) {
+        this.configManager = configManager;
+    }
 }
-

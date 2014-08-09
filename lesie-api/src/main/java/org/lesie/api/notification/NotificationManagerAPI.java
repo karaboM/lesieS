@@ -14,19 +14,16 @@
  *      limitations under the License.
  */
 
-package org.lesie.api.registration;
+package org.lesie.api.notification;
 
 import org.lesie.dto.response.LesieResponseDTO;
 
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-@Path("/registration")
+@Path("/notification")
 @Produces("application/json")
-public interface RegistrationManagerAPI {
+public interface NotificationManagerAPI {
+    public LesieResponseDTO notify(String message,String configID);
 
-    public LesieResponseDTO registerOrganisation(String name);
-    public LesieResponseDTO registerApplication(String appName,String appDesc,String organisationName);
-    public LesieResponseDTO registerUser(String globalKey,String name,String surname);
 }
-

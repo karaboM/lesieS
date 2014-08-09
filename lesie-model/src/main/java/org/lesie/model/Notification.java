@@ -17,6 +17,7 @@
 package org.lesie.model;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 public class Notification {
@@ -25,6 +26,7 @@ public class Notification {
     private long id;
 
     private String message;
+    private Timestamp timestamp;
 
 
     public long getId() {
@@ -41,5 +43,13 @@ public class Notification {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
     }
 }
