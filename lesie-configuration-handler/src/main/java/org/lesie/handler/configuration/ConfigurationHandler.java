@@ -14,16 +14,22 @@
  *      limitations under the License.
  */
 
-package org.lesie.kernel.api;
+package org.lesie.handler.configuration;
 
-public class Command {
+import org.lesie.data.service.ConfigurationService;
+import org.lesie.dto.request.LesieRequestDTO;
+import org.lesie.dto.response.LesieResponseDTO;
+import org.lesie.handler.LesieHandler;
 
-    public static String LOGIN           = "lesie-login";
-    public static String LOGOUT          = "lesie-logout";
-    public static String MARKED_ENTITIES = "lesie-marked-entities";
-    public static String REGISTER_APP    = "lesie-register-app";
-    public static String REGISTER_ENTITY = "lesie-register-entity";
-    public static String GET_APP_CONFIG  = "lesie-get-app-config";
+public class ConfigurationHandler implements LesieHandler{
 
+    private ConfigurationService configService;
 
+    @Override
+    public LesieResponseDTO processRequest(LesieRequestDTO requestDTO) {
+        LesieResponseDTO response = new LesieResponseDTO();
+        response.fillSimilar(requestDTO);
+
+        return response;
+    }
 }

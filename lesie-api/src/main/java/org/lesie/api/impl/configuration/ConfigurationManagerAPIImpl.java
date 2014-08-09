@@ -17,6 +17,7 @@
 package org.lesie.api.impl.configuration;
 
 import org.lesie.api.configuration.ConfigurationManagerAPI;
+import org.lesie.configuration.ConfigurationManager;
 import org.lesie.dto.response.LesieResponseDTO;
 
 public class ConfigurationManagerAPIImpl implements ConfigurationManagerAPI{
@@ -25,7 +26,7 @@ public class ConfigurationManagerAPIImpl implements ConfigurationManagerAPI{
 
     @Override
     public LesieResponseDTO getConfigByApplication(String appKey) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return configManager.getConfigByApplication(appKey);
     }
 
     public ConfigurationManager getConfigManager() {

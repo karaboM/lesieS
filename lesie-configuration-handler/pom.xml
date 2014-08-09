@@ -8,14 +8,15 @@
         <relativePath>../lesie-parent/pom.xml</relativePath>
     </parent>
 
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.lesie</groupId>
-    <artifactId>lesie-notification-handler</artifactId>
+    <artifactId>lesie-configuration-handler</artifactId>
     <packaging>bundle</packaging>
 
-    <name>lesie-notification-handler Bundle</name>
-    <description>lesie-notification-handler OSGi bundle project.</description>
+    <name>lesie-configuration-handler Blueprint Bundle</name>
+    <description>lesie-configuration-handler OSGi blueprint bundle project.</description>
 
     <dependencies>
         <dependency>
@@ -36,6 +37,13 @@
             <version>0.0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-dao</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -50,10 +58,10 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>
-                            org.lesie*;version=${project.version}
+                            org.lesie.handler.configuration;
                         </Export-Package>
                         <Import-Package>
-                            *
+                            org.osgi.framework,org.lesie.configuration,org.lesie.dto.response.*,org.lesie.dto.request.*,*;
                         </Import-Package>
                     </instructions>
                 </configuration>

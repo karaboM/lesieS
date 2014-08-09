@@ -14,16 +14,10 @@
  *      limitations under the License.
  */
 
-package org.lesie.kernel.api;
+package org.lesie.configuration;
 
-public class Command {
+import org.lesie.dto.response.LesieResponseDTO;
 
-    public static String LOGIN           = "lesie-login";
-    public static String LOGOUT          = "lesie-logout";
-    public static String MARKED_ENTITIES = "lesie-marked-entities";
-    public static String REGISTER_APP    = "lesie-register-app";
-    public static String REGISTER_ENTITY = "lesie-register-entity";
-    public static String GET_APP_CONFIG  = "lesie-get-app-config";
-
-
+public interface ConfigurationManager {
+    public LesieResponseDTO getConfigByApplication(String appKey);
 }

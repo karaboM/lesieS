@@ -34,6 +34,9 @@
         <module>../lesie-data-bootstrap</module>
         <module>../lesie-dao</module>
         <module>../lesie-dao-impl</module>
+        <module>../lesie-configuration</module>
+        <module>../lesie-configuration-impl</module>
+        <module>../lesie-configuration-handler</module>
     </modules>
 
     <dependencies>

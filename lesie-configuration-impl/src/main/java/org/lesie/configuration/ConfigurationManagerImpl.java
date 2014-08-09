@@ -13,44 +13,32 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
-package org.lesie.connection.impl;
 
+package org.lesie.configuration;
 
-import org.lesie.connection.ConnectionManager;
-import org.lesie.connection.Session;
 import org.lesie.dto.response.LesieResponseDTO;
 import org.lesie.kernel.SwitchBoard;
 import org.lesie.kernel.api.Command;
 
 import java.util.HashMap;
 
-public class ConnectionManagerImpl implements ConnectionManager {
-
+public class ConfigurationManagerImpl implements ConfigurationManager {
     private SwitchBoard switchBoard;
 
-
     @Override
-    public LesieResponseDTO login(String clientName, String identityKey) {
+    public LesieResponseDTO getConfigByApplication(String appKey) {
         HashMap<String,String> parameters = new HashMap<String, String>();
-        parameters.put("clientName",clientName);
-        parameters.put("identityKey",identityKey);
+        parameters.put("appKey",appKey);
 
-        LesieResponseDTO result = switchBoard.command(Command.LOGIN,parameters);
+        LesieResponseDTO result = switchBoard.command(Command.GET_APP_CONFIG,parameters);
         return result;
     }
 
-    @Override
-    public LesieResponseDTO logout(String clientName, String sessionKey) {
-        HashMap<String,String> parameters = new HashMap<String, String>();
-        parameters.put("clientName",clientName);
-        parameters.put("sessionKey",sessionKey);
 
-        LesieResponseDTO result = switchBoard.command(Command.LOGOUT,parameters);
-        return result;
-    }
 
 
     public SwitchBoard getSwitchBoard() {
+
         return switchBoard;
     }
 

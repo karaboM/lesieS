@@ -22,6 +22,12 @@
         </dependency>
         <dependency>
             <groupId>org.lesie</groupId>
+            <artifactId>lesie-configuration</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.lesie</groupId>
             <artifactId>lesie-dto</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>provided</scope>
@@ -39,8 +45,8 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
-                        <Export-Package>org.lesie.api.connection*</Export-Package>
-                        <Import-Package>org.osgi.*,org.lesie.connection,javax.ws.*,org.lesie.dto.response.*,org.lesie.dto.request.*,org.apache.cxf.jaxrs.client,org.apache.cxf.jaxrs.provider.*</Import-Package>
+                        <Export-Package>org.lesie.api.connection,org.lesie.api.configuration,org.lesie.api.notification,org.lesie.api.registration</Export-Package>
+                        <Import-Package>*</Import-Package>
                     </instructions>
                 </configuration>
             </plugin>

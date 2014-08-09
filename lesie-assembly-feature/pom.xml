@@ -64,6 +64,12 @@
 
         <dependency>
             <groupId>org.lesie</groupId>
+            <artifactId>lesie-configuration-handler</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.lesie</groupId>
             <artifactId>lesie-kernel</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
@@ -107,6 +113,18 @@
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-dao-impl</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-configuration</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.lesie</groupId>
+            <artifactId>lesie-configuration-impl</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

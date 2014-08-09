@@ -11,28 +11,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.lesie</groupId>
-    <artifactId>lesie-notification-handler</artifactId>
+    <artifactId>lesie-configuration</artifactId>
     <packaging>bundle</packaging>
 
-    <name>lesie-notification-handler Bundle</name>
-    <description>lesie-notification-handler OSGi bundle project.</description>
+    <name>lesie-configuration Blueprint Bundle</name>
+    <description>lesie-configuration OSGi blueprint bundle project.</description>
 
     <dependencies>
         <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.core</artifactId>
-            <version>4.3.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-dto</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.lesie</groupId>
-            <artifactId>lesie-handler</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
