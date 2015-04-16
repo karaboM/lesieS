@@ -3,9 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>lesie</artifactId>
+        <artifactId>lesieS</artifactId>
         <groupId>org.lesie</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.1-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -17,115 +17,115 @@
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-connector</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-connector-impl</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-queue</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-dto</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-handler</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-handler-impl</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-session-handler</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-configuration-handler</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-kernel</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-queue-manager</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-queue-manager-impl</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-model</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-datasource</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-data-bootstrap</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-dao</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-dao-impl</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-configuration</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-configuration-impl</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
 
     </dependencies>

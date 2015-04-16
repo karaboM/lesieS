@@ -6,9 +6,9 @@
 
 
     <groupId>org.lesie</groupId>
-    <artifactId>lesie-parent</artifactId>
+    <artifactId>lesieS-parent</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1-SNAPSHOT</version>
 
     <properties>
         <cxf.version>2.7.5</cxf.version>

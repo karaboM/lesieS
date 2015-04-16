@@ -4,7 +4,7 @@
     <parent>
         <artifactId>lesie-parent</artifactId>
         <groupId>org.lesie</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.1-SNAPSHOT</version>
         <relativePath>../lesie-parent</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -26,13 +26,13 @@
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-dto</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.lesie</groupId>
             <artifactId>lesie-handler</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

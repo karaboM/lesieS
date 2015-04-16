@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.lesie</groupId>
-    <artifactId>lesie</artifactId>
+    <artifactId>lesieS</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1-SNAPSHOT</version>
 
 
     <properties>
@@ -38,7 +38,7 @@
                             <artifactItem>
                                 <groupId>org.lesie</groupId>
                                 <artifactId>lesie-distribution</artifactId>
-                                <version>0.0.1-SNAPSHOT</version>
+                                <version>0.1-SNAPSHOT</version>
                                 <type>tar.gz</type>
                                 <outputDirectory>target/</outputDirectory>
                             </artifactItem>
